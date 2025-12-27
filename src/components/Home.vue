@@ -72,6 +72,7 @@
             <el-header style="margin:0;padding:0;" height="80px">
                 <el-container style="background-color:blanchedalmond;margin:0;padding:0;height:80px">
                     <div style="margin: auto;margin-left:100px"><h1>欢迎您登录后台管理系统，管理员用户！</h1></div>
+                    <!-- 注销按钮 -->
                     <div style="margin: auto;margin-right:50px"><el-button type="primary" @click="logout">注销</el-button></div>
                 </el-container>
             </el-header>
@@ -87,6 +88,7 @@
     export default {
         name: 'HomePage',
         methods: {
+            // 注销功能实现 logout()
             logout() {
                 Storage.commit('clearUserInfo')
                 this.$router.push({name: 'login'})
