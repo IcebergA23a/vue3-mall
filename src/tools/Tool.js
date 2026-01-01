@@ -8,3 +8,5 @@ const Tools = {
         link.click(); 
     }
 }
+
+export default Tools

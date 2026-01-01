@@ -61,6 +61,10 @@
          <div class="content-row">
             <el-container>
                 <el-button type="primary" @click="requestData">筛选</el-button> 
+                <el-button type="danger"  @click="clear">清空筛选</el-button>
+                <el-button type="primary" @click="exportData">导出</el-button>
+                <el-button type="primary" @click="dispatchGoods">批量发货</el-button>
+                <el-button type="primary" @click="exportDispatchGoods">下载批量发货样单</el-button>
             </el-container>
         </div>
 
@@ -122,6 +126,8 @@
 
 <script>
     import Mock from '../../mock/Mock.js'
+    import Tools from '../../tools/Tool.js'
+
     export default {
         name: "OrderPage",
         data() {
@@ -150,6 +156,35 @@
                 })
                 this.orderList = Mock.getOrder(this.$route.params.type);
             },
+            // 清空筛选项
+            clear() {
+                this.queryParam = {
+                    good: '',
+                    consignee: '',
+                    phone: '',
+                    name: '',
+                    payTime: '',
+                    sendTime: ''
+                }
+                this.orderList = Mock.getOrder(this.$route.params.type)
+            },
+            // 导出订单
+            exportData() {
+                Tools.exportJson('order.json', JSON.stringify(this.orderList))
+            },
+            // 进行发货
+            dispatchGoods() {
+                this.$message({
+                    type:'success',
+                    message:'发货商品：' + JSON.stringify(this.multipleSelection)
+                })
+            },
+             // 导出选中的发货单
+            exportDispatchGoods() {
+                Tools.exportJson('发货单.json', JSON.stringify(this.multipleSelection));
+            },
+
+
             // 切换Tab, 刷新数据
             handleClick(tab) {
                 this.$message({
