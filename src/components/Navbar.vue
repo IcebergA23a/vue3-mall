@@ -3,6 +3,8 @@
         <el-menu :default-active="1" class="el-menu-demo" mode="horizontal">
             <el-menu-item index="1"><router-link to="/">Home</router-link></el-menu-item>
             <el-menu-item index="2" v-if="!isLoggedIn"><router-link to="/login">Login</router-link></el-menu-item>
+            <el-menu-item index="3" v-if="!isLoggedIn"><router-link to="/register">Register</router-link></el-menu-item>
+
         </el-menu>
     </el-header>
 </template>

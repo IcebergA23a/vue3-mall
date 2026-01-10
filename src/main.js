@@ -20,6 +20,8 @@ const app = createApp(App)
 
 app.use(ElementPlus)
 
+
+axios.defaults.baseURL = 'http://localhost:10000'
 // 注册Axios
 app.use(VueAxios, axios)
 
