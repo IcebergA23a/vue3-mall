@@ -62,6 +62,14 @@
                     
                     <el-menu-item index="/home/data">数据统计</el-menu-item>
                 </el-sub-menu>
+                <el-sub-menu index="6">
+                    <template #title>
+                        <i class="el-icon-s-custom"></i>
+                        <span>用户管理</span>
+                    </template>
+                    
+                    <el-menu-item index="/home/user">用户列表</el-menu-item> 
+                </el-sub-menu>
 
             </el-menu>
         </el-aside>

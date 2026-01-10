@@ -8,6 +8,9 @@ import Store from './Storage';
 // 引入Order组件
 import Order1 from '../components/order/Order1.vue'
 
+// 引入User组件，配合后端做CROS测试
+import User from '../components/User.vue'
+
 const Router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -19,6 +22,11 @@ const Router = createRouter({
                     path: 'order/:type', // 0 是普通订单，1 是秒杀订单
                     component: Order1,
                     name: "Order"
+                },
+                {
+                    path: 'user',
+                    component: User,
+                    name: "User"
                 }
             ],
             redirect: '/home/order/0'
