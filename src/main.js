@@ -1,6 +1,4 @@
 import { createApp } from 'vue'
-import Router from './tools/Router'
-import Store from './tools/Storage'
 
 // 引入Element Plus
 import ElementPlus from 'element-plus'
