@@ -5,6 +5,7 @@ import Home from '../views/Home.vue';
 import Login from '../views/Login';
 import Profile from '../views/Profile';
 import Register  from '@/views/Register.vue';
+import Admin from '@/views/Admin.vue';
 
 const routes = [
     {
@@ -28,6 +29,12 @@ const routes = [
       component: Profile,
       props: true,
       meta: { requiresAuth: true}
+    },
+    {
+        path: '/admin',
+        name: 'Admin',
+        component: Admin,
+        meta: { requiresAdmin: true } // 仅管理员可访问
     }
 ]
 const router = createRouter({
